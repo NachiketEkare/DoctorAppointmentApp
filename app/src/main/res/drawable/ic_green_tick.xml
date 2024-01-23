@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24.0"
+    android:viewportHeight="24.0"
+    android:tint="@android:color/holo_green_light">
+
+    <!-- Circle -->
+    <item
+        android:width="24dp"
+        android:height="24dp"
+        android:gravity="center">
+        <shape android:shape="oval">
+            <solid android:color="@android:color/transparent"/>
+            <stroke
+                android:width="4dp"
+                android:color="@android:color/holo_green_light"/>
+        </shape>
+    </item>
+
+    <!-- Tick -->
+    <item
+        android:width="30dp"
+        android:height="30dp"
+        android:gravity="center">
+        <path
+            android:fillColor="#66A917"
+            android:pathData="M6.3,10.3L4.9,11.7L9,15.8L19,5.8L17.6,4.4L9,13L6.3,10.3z"/>
+    </item>
+</vector>
+
+
