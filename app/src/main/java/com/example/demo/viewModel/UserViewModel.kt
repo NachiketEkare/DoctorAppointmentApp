@@ -26,7 +26,6 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
         if (userRepository.getUserByEmail(user.email) == null) {
             userRepository.insertUser(user)
         }
-        Log.d("hello","working")
     }
 
     // Function to delete a user

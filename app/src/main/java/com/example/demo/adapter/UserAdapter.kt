@@ -29,7 +29,7 @@ class UserAdapter(
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val user = userList[position]
         //holder.profileImage.setImageResource(user.profileImage)
-        holder.status.text = user.email
+        holder.email.text = user.email
         holder.userNameTextView.text = user.name
         holder.userAgeTextView.text = user.age
         holder.userGenderTextView.text = user.gender
@@ -73,7 +73,7 @@ class UserAdapter(
         val userAgeTextView: TextView = binding.Age
         val userGenderTextView: TextView = binding.Gender
         val btnReject: Button = binding.reject
-        val status: TextView = binding.status
+        val email: TextView = binding.email
         val greenTick: ImageView = binding.greenTick
         val acceptBtn: Button = binding.accept
         val comment: TextView = binding.comment

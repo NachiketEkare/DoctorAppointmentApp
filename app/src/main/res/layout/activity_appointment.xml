@@ -3,31 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:id="@+id/doctor"
     android:layout_height="match_parent"
-    tools:context=".view.UserActivity">
+    tools:context=".view.AppointmentActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/AppointmentRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/BtnAppointment"
-        android:layout_width="210dp"
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
+        android:background="@drawable/btn_shape"
+        android:textColor="@color/white"
         android:layout_marginBottom="24dp"
-        android:background="@drawable/btn_shape2"
         android:fontFamily="@font/roboto"
-        android:text="Check Appointments"
-        android:textColor="@color/black"
+        android:text="Back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

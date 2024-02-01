@@ -1,6 +1,7 @@
 package com.example.demo.view
 
 import android.app.AlertDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -27,7 +28,7 @@ class UserActivity : AppCompatActivity(), ItemDeleteInterface {
         val view = binding.root
         setContentView(view)
 
-        supportActionBar?.title = "Appointment List"
+        supportActionBar?.title = "Patient List"
 
         // Initialize ViewModel
         userViewModel = ViewModelProvider(
@@ -71,6 +72,11 @@ class UserActivity : AppCompatActivity(), ItemDeleteInterface {
             it?.let {
                 userAdapter.submitList(it)
             }
+        }
+
+        binding.BtnAppointment.setOnClickListener {
+            startActivity(Intent(this,AppointmentActivity::class.java))
+            this.finish()
         }
 
     }

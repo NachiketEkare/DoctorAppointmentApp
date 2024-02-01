@@ -1,20 +1,19 @@
 package com.example.demo.view
 
-
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import com.example.demo.model.User
 import com.example.demo.databinding.ActivityAddPatientDetailsBinding
-import com.example.demo.viewModel.UserViewModel
+import com.example.demo.model.Appointment
+import com.example.demo.viewModel.AppointmentViewModel
 
 class AddPatientDetails : AppCompatActivity() {
 
-    private lateinit var userViewModel: UserViewModel
-    private lateinit var user: User
+    private lateinit var appointmentViewModel: AppointmentViewModel
+    private lateinit var appointment: Appointment
 
     private lateinit var binding: ActivityAddPatientDetailsBinding
 
@@ -27,13 +26,11 @@ class AddPatientDetails : AppCompatActivity() {
         supportActionBar?.title = "Add Patient Details"
 
 
-        userViewModel = ViewModelProvider(
+        appointmentViewModel = ViewModelProvider(
             this,
             ViewModelProvider.AndroidViewModelFactory.getInstance(application)
         )[
-                UserViewModel::class.java]
-
-
+                AppointmentViewModel::class.java]
 
         binding.addBtn.setOnClickListener {
 
@@ -46,14 +43,14 @@ class AddPatientDetails : AppCompatActivity() {
 
 
             if (name.isNotEmpty() && age.isNotEmpty() && gender.isNotEmpty() && email.isNotEmpty()) {
-                user = User(email, name, age, gender)
-                userViewModel.insertUser(user)
+                appointment = Appointment(email, name, age, gender)
+                appointmentViewModel.insertBooking(appointment)
+                val intent = Intent(this, AppointmentActivity::class.java)
+                startActivity(intent)
+                this.finish()
             } else {
                 Toast.makeText(this, "Please Enter All Fields", Toast.LENGTH_SHORT).show()
             }
-
-            startActivity(Intent(applicationContext, UserActivity::class.java))
-            this.finish()
         }
 
         binding.backBtn.setOnClickListener {

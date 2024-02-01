@@ -4,12 +4,14 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.demo.model.Appointment
 import com.example.demo.model.User
 
-@Database(entities = [User::class], version = 3 , exportSchema = false)
+@Database(entities = [User::class,Appointment::class], version = 5 , exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun userDao(): UserDao
+    abstract fun appointmentDao():AppointmentDao
 
     companion object {
         @Volatile

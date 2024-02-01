@@ -16,7 +16,7 @@ class BookingActivity : AppCompatActivity(), ItemonClickInterface {
 
     private lateinit var docrecyclerview: RecyclerView
     private lateinit var docAdapter: DoctorAdapter
-    private lateinit var context: Context
+    lateinit var context: Context
     private lateinit var binding: ActivityBookingBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
